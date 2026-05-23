@@ -1,0 +1,10 @@
+<nav class="nav">
+  {{ range site.Menus.main }}
+    <a
+      href="{{ .URL }}"
+      class="{{ if or ($.IsMenuCurrent "main" .) ($.HasMenuCurrent "main" .) }}active{{ end }}"
+    >
+      {{ .Name }}
+    </a>
+  {{ end }}
+</nav>

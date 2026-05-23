@@ -1,0 +1,10 @@
+<ul>
+  {{ range . }}
+    <li>
+      <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      <small>{{ .Date.Format "2006-01-02" }}</small>
+    </li>
+  {{ else }}
+    <li>当前暂无文章</li>
+  {{ end }}
+</ul>

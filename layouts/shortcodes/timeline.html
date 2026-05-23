@@ -1,0 +1,10 @@
+{{ $title := .Get "title" | default "时间线" }}
+
+<section class="timeline">
+  <h3 class="timeline-title">{{ $title }}</h3>
+  <div class="timeline-body">
+    <ul class="timeline-list">
+      {{ .Inner }}
+    </ul>
+  </div>
+</section>

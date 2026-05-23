@@ -1,0 +1,15 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ $p := .Paginate (.Pages.ByDate.Reverse) }}
+{{ partial "post-list.html" $p.Pages }}
+
+<nav class="pagination">
+  {{ with $p.Prev }}
+    <a href="{{ .URL }}">← 更新的文章</a>
+  {{ end }}
+  {{ with $p.Next }}
+    <a href="{{ .URL }}">更早的文章 →</a>
+  {{ end }}
+</nav>
+{{ end }}

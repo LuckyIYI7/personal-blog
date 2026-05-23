@@ -1,0 +1,18 @@
+{{ $taxo := .taxo }}
+{{ $label := .label }}
+{{ $terms := .terms }}
+
+{{ if $terms }}
+<p>
+  <small>{{ $label }}：
+    {{ range $i, $term := $terms }}
+      {{ if gt $i 0 }} · {{ end }}
+      {{ with site.GetPage (printf "/%s/%s" $taxo $term) }}
+        <a href="{{ .RelPermalink }}">{{ $term }}</a>
+      {{ else }}
+        {{ $term }}
+      {{ end }}
+    {{ end }}
+  </small>
+</p>
+{{ end }}

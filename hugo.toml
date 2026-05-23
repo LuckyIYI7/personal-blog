@@ -1,0 +1,46 @@
+baseURL = "https://example.com/"
+locale = 'zh-cn'
+title = '我的 Hugo 博客'
+enableRobotsTXT = true
+[menus]
+  [[menus.main]]
+    name = "首页"
+    pageRef = "/"
+    weight = 1
+
+  [[menus.main]]
+    name = "文章"
+    pageRef = "/posts"
+    weight = 2
+
+  [[menus.main]]
+    name = "归档"
+    pageRef = "/archives"
+    weight = 3
+
+  [[menus.main]]
+    name = "标签"
+    pageRef = "/tags"
+    weight = 4
+
+  [[menus.main]]
+    name = "分类"
+    pageRef = "/categories"
+    weight = 5
+
+  [[menus.main]]
+    name = "RSS"
+    url = "/index.xml"
+    weight = 99
+
+[markup]
+  [markup.tableOfContents]
+    startLevel = 2
+    endLevel = 3
+    ordered = false
+
+[pagination]
+  pagerSize = 10
+
+[params]
+  description = "记录我的 Hugo 学习与工程实践。"

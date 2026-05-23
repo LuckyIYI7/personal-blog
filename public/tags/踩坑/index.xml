@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>踩坑 on 我的 Hugo 博客</title><link>https://example.com/tags/%E8%B8%A9%E5%9D%91/</link><description>Recent content in 踩坑 on 我的 Hugo 博客</description><generator>Hugo</generator><language>zh-cn</language><lastBuildDate>Fri, 22 May 2026 20:00:00 +0800</lastBuildDate><atom:link href="https://example.com/tags/%E8%B8%A9%E5%9D%91/index.xml" rel="self" type="application/rss+xml"/><item><title>Codex 安装踩坑记录</title><link>https://example.com/posts/codex%E5%AE%89%E8%A3%85/</link><pubDate>Fri, 22 May 2026 20:00:00 +0800</pubDate><guid>https://example.com/posts/codex%E5%AE%89%E8%A3%85/</guid><description>&lt;h2 id="前言为什么选-openrouter"&gt;前言：为什么选 OpenRouter&lt;/h2&gt;
+&lt;p&gt;一开始打算直接用 ChatGPT 账号，第一步登录就卡住了——用国内手机号显示 invalid。。后来搜了一圈，知道可以用虚拟号码接收验证码，大概有几个平台可以用：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://5sim.com/zh"&gt;5sim&lt;/a&gt;：推荐越南节点&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://hero-sms.com/cn"&gt;hero-sms&lt;/a&gt;：推荐东南亚国家（泰国）&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://pingmelite.com/cn/sms-verification-code-helper-2/"&gt;Pingme Lite&lt;/a&gt;：推荐英国节点&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;但一个虚拟号码大概要5r，登上去之后还要充值，充值 ChatGPT 本身又是个麻烦事（代充要给账号密码、海外信用卡门槛高、虚拟卡平台跑路的多。。），所以最后决定不折腾了，改用 &lt;strong&gt;OpenRouter 提供的第三方 API&lt;/strong&gt;。OpenRouter 支持国内支付方式，也是个比较大的中转站，感觉比较靠谱。。&lt;/p&gt;
+
+
+&lt;section class="timeline"&gt;
+ &lt;h3 class="timeline-title"&gt;安装关键节点&lt;/h3&gt;
+ &lt;div class="timeline-body"&gt;
+ &lt;ul class="timeline-list"&gt;
+ 
+
+
+
+&lt;li class="timeline-item timeline-item-warn"&gt;
+ &lt;div class="timeline-time"&gt;2026-05-22 14:00&lt;/div&gt;
+ &lt;div class="timeline-content"&gt;开始安装，发现 &lt;code&gt;codex&lt;/code&gt; 命令不可用。&lt;/div&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class="timeline-item timeline-item-ok"&gt;
+ &lt;div class="timeline-time"&gt;2026-05-22 15:00&lt;/div&gt;
+ &lt;div class="timeline-content"&gt;定位为 CLI 未安装 + 环境变量未完整配置。&lt;/div&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class="timeline-item timeline-item-error"&gt;
+ &lt;div class="timeline-time"&gt;2026-05-22 17:00&lt;/div&gt;
+ &lt;div class="timeline-content"&gt;Desktop App 出现 401，原因是 API base URL 与 key 不匹配。&lt;/div&gt;
+&lt;/li&gt;
+
+
+
+
+&lt;li class="timeline-item timeline-item-ok"&gt;
+ &lt;div class="timeline-time"&gt;2026-05-22 19:00&lt;/div&gt;
+ &lt;div class="timeline-content"&gt;修正 &lt;code&gt;config.toml&lt;/code&gt;，最终可用。&lt;/div&gt;
+&lt;/li&gt;
+
+
+ &lt;/ul&gt;
+ &lt;/div&gt;
+&lt;/section&gt;
+&lt;hr&gt;
+&lt;h2 id="一openrouter-准备"&gt;一、OpenRouter 准备&lt;/h2&gt;
+&lt;h3 id="充值"&gt;充值&lt;/h3&gt;
+&lt;p&gt;OpenRouter 虽然支持国内支付，但如果地区选在国内，御三家模型（GPT/Claude/Gemini）仍然显示不可用。。解决方法是把地区改到&lt;strong&gt;美国免税州&lt;/strong&gt;，我改的是俄勒冈州波特兰——让 DeepSeek 随机生成了一个波特兰的地址信息填进去，最后成功支付了。&lt;/p&gt;
+&lt;h3 id="拿到-api-key"&gt;拿到 API Key&lt;/h3&gt;
+&lt;p&gt;充值完成后在 OpenRouter 控制台生成 API Key，格式是 &lt;code&gt;sk-or-v1-xxxx&lt;/code&gt;，后面配置环境变量和 config.toml 都要用到。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h2 id="二codex-cli-安装"&gt;二、Codex CLI 安装&lt;/h2&gt;
+&lt;h3 id="环境变量配置"&gt;环境变量配置&lt;/h3&gt;
+&lt;p&gt;在 PowerShell 里输入 &lt;code&gt;codex&lt;/code&gt; 发现根本不认识这个命令，这才意识到我下载的是 Desktop App（GUI 桌面应用），并没有安装 CLI（命令行 Agent 工具，类似 Claude Code 那样在终端工作）。&lt;/p&gt;</description></item></channel></rss>
