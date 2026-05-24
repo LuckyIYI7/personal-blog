@@ -6,6 +6,10 @@ html {
   scroll-behavior: smooth;
 }
 
+body {
+  overflow-x: hidden;
+}
+
 #single-post article h1,
 #single-post article h2,
 #single-post article h3,
@@ -135,6 +139,27 @@ html {
   margin: 14px 0;
 }
 
+#single-post,
+#single-post > article {
+  min-width: 0;
+}
+
+#single-post > article {
+  width: 100%;
+}
+
+#single-post article .highlight,
+#single-post article pre {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+#single-post article p code,
+#single-post article li code {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
+
 #single-post article .table-scroll {
   margin: 14px 0;
   overflow-x: auto;
@@ -194,6 +219,10 @@ html {
 @media (max-width: 860px) {
   #single-post article .table-scroll table {
     min-width: 640px;
+  }
+
+  #single-post {
+    display: block;
   }
 }
 
