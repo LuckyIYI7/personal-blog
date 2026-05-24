@@ -1,0 +1,32 @@
+{{- $birth := .Get "birth" | default "2003-07-17" -}}
+{{- $birthTime := time (printf "%sT00:00:00+08:00" $birth) -}}
+{{- $now := now -}}
+{{- $age := sub $now.Year $birthTime.Year -}}
+{{- $birthdayPassed := or (gt $now.Month $birthTime.Month) (and (eq $now.Month $birthTime.Month) (ge $now.Day $birthTime.Day)) -}}
+{{- if not $birthdayPassed -}}
+  {{- $age = sub $age 1 -}}
+{{- end -}}
+<span class="age-auto" data-birth="{{ $birth }}">{{ $age }}</span>
+<script>
+(() => {
+  const nodes = document.querySelectorAll(".age-auto[data-birth]");
+  const today = new Date();
+
+  const calcAge = (birth) => {
+    const parts = birth.split("-").map((x) => Number(x));
+    if (parts.length !== 3 || parts.some((x) => Number.isNaN(x))) return null;
+
+    const [year, month, day] = parts;
+    let age = today.getFullYear() - year;
+    const monthNow = today.getMonth() + 1;
+    const dayNow = today.getDate();
+    if (monthNow < month || (monthNow === month && dayNow < day)) age -= 1;
+    return age;
+  };
+
+  nodes.forEach((node) => {
+    const age = calcAge(node.dataset.birth || "");
+    if (age !== null) node.textContent = String(age);
+  });
+})();
+</script>

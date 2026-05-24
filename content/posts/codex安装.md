@@ -2,8 +2,11 @@
 title = "Codex 安装踩坑记录"
 date = 2026-05-22T20:00:00+08:00
 draft = false
+
+author = "Jiayi"
 tags = ["Codex", "安装", "踩坑"]
 categories = ["学习记录"]
+
 +++
 
 ## 前言：为什么选 OpenRouter

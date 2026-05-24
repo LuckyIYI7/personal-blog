@@ -1,5 +1,5 @@
 ---
 headless: true
 ---
-- age: 5
+- age: {{< age birth="2003-07-17" >}}
 - pronouns: she/her

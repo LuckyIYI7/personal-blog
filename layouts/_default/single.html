@@ -16,10 +16,14 @@
         </div>
         {{ end }}
         <h2>{{ .Title }}</h2>
-        {{ $tags := .Params.tags }}
-        tags:
-        {{ range $index, $tag := .Params.tags }}
-        <a href="{{ relLangURL (printf "/tags/%s" $tag) }}">{{ $tag }}</a>{{ if ne $index (sub ($tags | len) 1) }},{{ end }}
+        {{ with .Params.tags }}
+        {{ $tags := . }}
+        <div class="post-tags">
+            tags:
+            {{ range $index, $tag := $tags }}
+            <a href="{{ relLangURL (printf "/tags/%s" $tag) }}">{{ $tag }}</a>{{ if ne $index (sub ($tags | len) 1) }},{{ end }}
+            {{ end }}
+        </div>
         {{ end }}
         <div class="post-header">
         @{{ .Params.author }} <span class="timestamp">{{ .Date.Format "02/01/2006" }}</span>

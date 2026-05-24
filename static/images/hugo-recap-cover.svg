@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-labelledby="title desc">
+  <title id="title">Hugo 博客搭建复盘封面</title>
+  <desc id="desc">简洁的猫咪风格技术复盘封面，展示 Hugo、主题迁移与 Cloudflare 部署。</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5fbff"/>
+      <stop offset="100%" stop-color="#e6f1ff"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#f7fbff"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1080" cy="90" r="70" fill="#fff4cc" opacity="0.9"/>
+  <circle cx="150" cy="520" r="120" fill="#d9ecff" opacity="0.65"/>
+
+  <rect x="95" y="85" width="1010" height="460" rx="26" fill="url(#card)" stroke="#a8c8f0" stroke-width="3"/>
+
+  <text x="145" y="200" fill="#284b6b" font-size="62" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif" font-weight="700">
+    Hugo 博客搭建复盘
+  </text>
+
+  <text x="145" y="265" fill="#4b6b8a" font-size="32" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">
+    从 0 到上线：功能补齐 · 主题迁移 · Cloudflare 发布
+  </text>
+
+  <rect x="145" y="320" width="180" height="56" rx="28" fill="#ffe6ea"/>
+  <text x="180" y="356" fill="#9f3c50" font-size="28" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">复盘</text>
+
+  <rect x="345" y="320" width="220" height="56" rx="28" fill="#e8f7e8"/>
+  <text x="382" y="356" fill="#2f7a41" font-size="28" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">可维护</text>
+
+  <rect x="585" y="320" width="230" height="56" rx="28" fill="#e8f1ff"/>
+  <text x="624" y="356" fill="#285ca8" font-size="28" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">持续迭代</text>
+
+  <g transform="translate(900,360)">
+    <circle cx="0" cy="0" r="72" fill="#fff" stroke="#9ec2ee" stroke-width="3"/>
+    <polygon points="-30,-14 0,-42 30,-14" fill="#ffe3ea"/>
+    <polygon points="-30,14 0,42 30,14" fill="#dff4ff"/>
+    <circle cx="-18" cy="-8" r="6" fill="#3b5c7a"/>
+    <circle cx="18" cy="-8" r="6" fill="#3b5c7a"/>
+    <path d="M -16 18 Q 0 30 16 18" stroke="#3b5c7a" stroke-width="4" fill="none" stroke-linecap="round"/>
+  </g>
+
+  <text x="145" y="470" fill="#6a85a0" font-size="24" font-family="'Segoe UI', 'Microsoft YaHei', sans-serif">
+    Jiayi's Hugo Blog · Learning Notes
+  </text>
+</svg>
