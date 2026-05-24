@@ -97,3 +97,36 @@ Cloudflare 有 Workers 和 Pages 两条路。Hugo 静态博客优先 Pages。
 
 如果你也在从 0 搭 Hugo，希望这篇能给你一点信心：
 先跑起来，再变漂亮，最后再变强大。
+---
+
+## 补充：搭建 Hugo 博客需要哪些技术栈？
+
+如果把这次实践拆开看，核心技术栈可以分成 6 层：
+
+1. 内容层：Markdown + Front Matter（title/date/tags/categories/draft）
+2. 配置层：`hugo.toml`（菜单、分页、TOC、baseURL）
+3. 模板层：Hugo Layouts / Partial / Theme Override（`layouts/` 覆盖主题）
+4. 样式交互层：CSS + 少量 JavaScript（目录高亮、平滑滚动、响应式修复）
+5. 工程协作层：Git（分支、提交、回滚、同步）
+6. 部署层：Cloudflare Pages（Git push 后自动构建发布）
+
+这些层不是“必须一次学完”，而是可以边做边补。
+
+---
+
+## 补充：我的 Hugo 学习路线图
+
+我现在更推荐下面这条路线（先可用，再美化，再工程化）：
+
+```mermaid
+graph TD
+A[Markdown 与 Front Matter] --> B[Hugo 基础命令与目录结构]
+B --> C[hugo.toml 配置: 菜单 分页 TOC]
+C --> D[主题使用与覆盖机制: layouts/static]
+D --> E[Shortcode 与样式优化: CSS/JS]
+E --> F[Git 工作流: 分支 提交 回滚]
+F --> G[Cloudflare Pages 自动部署]
+G --> H[持续迭代: 性能 SEO 写作体系]
+```
+
+一句话总结：先跑通发布链路，再打磨体验，最后再谈自动化。
