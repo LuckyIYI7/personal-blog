@@ -1,0 +1,7 @@
+{{ $status := .Get "status" | default "ok" }}
+{{ $time := .Get "time" | default "" }}
+
+<li class="timeline-item timeline-item-{{ $status }}">
+  {{ if $time }}<div class="timeline-time">{{ $time }}</div>{{ end }}
+  <div class="timeline-content">{{ .Inner | markdownify }}</div>
+</li>

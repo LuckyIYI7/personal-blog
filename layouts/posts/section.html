@@ -1,15 +1,26 @@
 {{ define "main" }}
-<h1>{{ .Title }}</h1>
+<div id="single-post">
+  <article class="taxonomy-page">
+    <h2>文章</h2>
 
-{{ $p := .Paginate (.Pages.ByDate.Reverse) }}
-{{ partial "post-list.html" $p.Pages }}
+    {{ $p := .Paginate (.Pages.ByDate.Reverse) }}
+    <ul class="taxonomy-post-list">
+      {{ range $p.Pages }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <small>{{ .Date.Format "2006-01-02" }}</small>
+        </li>
+      {{ else }}
+        <li>暂无文章。</li>
+      {{ end }}
+    </ul>
 
-<nav class="pagination">
-  {{ with $p.Prev }}
-    <a href="{{ .URL }}">← 更新的文章</a>
-  {{ end }}
-  {{ with $p.Next }}
-    <a href="{{ .URL }}">更早的文章 →</a>
-  {{ end }}
-</nav>
+    {{ if gt $p.TotalPages 1 }}
+      <nav class="taxonomy-pagination">
+        {{ with $p.Prev }}<a href="{{ .URL }}">← 更新的文章</a>{{ end }}
+        {{ with $p.Next }}<a href="{{ .URL }}">更早的文章 →</a>{{ end }}
+      </nav>
+    {{ end }}
+  </article>
+</div>
 {{ end }}

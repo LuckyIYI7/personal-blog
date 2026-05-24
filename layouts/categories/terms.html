@@ -1,0 +1,17 @@
+{{ define "main" }}
+<div id="single-post">
+  <article class="taxonomy-page">
+    <h2>分类</h2>
+    <ul class="term-list">
+      {{ range .Site.Taxonomies.categories.ByCount }}
+        <li>
+          <a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+          <small>{{ .Count }} 篇</small>
+        </li>
+      {{ else }}
+        <li>暂无分类。</li>
+      {{ end }}
+    </ul>
+  </article>
+</div>
+{{ end }}

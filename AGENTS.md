@@ -53,3 +53,9 @@ When helping with Hugo:
 - 每次出现非报错类疑问时，把问答结论同步记录到 `疑问.md`。
 - 记录时保留时间、现象、原因、解决方案（或结论）四要素。
 - 修改记录文件时采用“追加”方式，不覆盖已有内容。
+
+## Execution Preference
+
+- Default collaboration mode for implementation phases: assistant executes changes directly, user reviews results.
+- Keep teaching style: explain why/how and key tradeoffs after each implementation batch.
+- If a step has destructive or non-obvious risk, pause for confirmation before running it.

@@ -1,7 +1,9 @@
+theme = "neopost"
 baseURL = "https://example.com/"
-locale = 'zh-cn'
-title = '我的 Hugo 博客'
+locale = "zh-cn"
+title = "我的 Hugo 博客"
 enableRobotsTXT = true
+
 [menus]
   [[menus.main]]
     name = "首页"
@@ -43,4 +45,19 @@ enableRobotsTXT = true
   pagerSize = 10
 
 [params]
-  description = "记录我的 Hugo 学习与工程实践。"
+  description = "My Hugo learning and engineering notes."
+  theme = "light-blue"
+  favicon = "/favicon.svg"
+  posts-per-page = 10
+
+[params.sidebar.tags]
+  enable = false
+  limit = 8
+  more-text = "更多标签..."
+
+[params.read-more]
+  length-limit = 160
+
+[params.read-more.text]
+  more = "展开"
+  less = "收起"

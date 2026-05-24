@@ -1,0 +1,9 @@
+{{ define "main" }}
+<h1>{{ .Site.Title }}</h1>
+<p>欢迎来到我的 Hugo 博客。</p>
+
+{{ $recent := first 5 (.Site.RegularPages.ByDate.Reverse) }}
+{{ partial "post-list.html" $recent }}
+
+<p><a href="{{ "/posts/" | relURL }}">查看全部文章 →</a></p>
+{{ end }}

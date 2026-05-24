@@ -1,0 +1,30 @@
+{{ define "main" }}
+<h1>{{ .Title }}</h1>
+
+{{ $posts := where site.RegularPages "Section" "posts" }}
+{{ $posts = $posts.ByDate.Reverse }}
+
+{{ range ($posts.GroupByDate "2006" "desc") }}
+  <details open>
+    <summary>{{ .Key }} 年（{{ len .Pages }} 篇）</summary>
+    <ul>
+      {{ range (.Pages.GroupByDate "01" "desc") }}
+        <li>
+          <strong>{{ int .Key }} 月（{{ len .Pages }} 篇）</strong>
+          <ul>
+            {{ range .Pages.ByDate.Reverse }}
+              <li>
+                <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+                <small>{{ .Date.Format "2006-01-02" }}</small>
+              </li>
+            {{ end }}
+          </ul>
+        </li>
+      {{ end }}
+    </ul>
+  </details>
+{{ else }}
+  <p>暂无文章可归档。</p>
+{{ end }}
+
+{{ end }}

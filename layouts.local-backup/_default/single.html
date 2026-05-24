@@ -1,0 +1,56 @@
+{{ define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p><small>发布时间：{{ .Date.Format "2006-01-02 15:04" }}</small></p>
+
+  {{ partial "term-links.html" (dict "taxo" "categories" "label" "分类" "terms" .Params.categories) }}
+  {{ partial "term-links.html" (dict "taxo" "tags" "label" "标签" "terms" .Params.tags) }}
+
+  {{ $hasTOC := gt (len .Fragments.Headings) 0 }}
+  {{ $tocRaw := .TableOfContents }}
+  {{ $tocDesktop := replace $tocRaw `id="TableOfContents"` `id="TableOfContentsDesktop"` }}
+  {{ $tocMobile := replace $tocRaw `id="TableOfContents"` `id="TableOfContentsMobile"` }}
+
+  {{ if $hasTOC }}
+  <details class="toc-mobile">
+    <summary>目录</summary>
+    {{ $tocMobile | safeHTML }}
+  </details>
+  {{ end }}
+
+  <div class="post-layout {{ if $hasTOC }}has-toc{{ end }}">
+    <div class="post-main">
+      {{ .Content }}
+    </div>
+
+    {{ if $hasTOC }}
+    <aside class="toc toc-desktop">
+      <p class="toc-title">目录</p>
+      {{ $tocDesktop | safeHTML }}
+    </aside>
+    {{ end }}
+  </div>
+
+  <hr>
+  <nav class="post-nav">
+    <div>
+      {{ with .NextInSection }}
+        <a href="{{ .RelPermalink }}">← 上一篇：{{ .Title }}</a>
+      {{ else }}
+        <small>没有上一篇</small>
+      {{ end }}
+    </div>
+    <div>
+      {{ with .PrevInSection }}
+        <a href="{{ .RelPermalink }}">下一篇：{{ .Title }} →</a>
+      {{ else }}
+        <small>没有下一篇</small>
+      {{ end }}
+    </div>
+  </nav>
+</article>
+
+{{ if $hasTOC }}
+<script src="{{ "js/toc-spy.js" | relURL }}" defer></script>
+{{ end }}
+{{ end }}

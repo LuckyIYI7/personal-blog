@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div id="single-post">
+  <article class="taxonomy-page">
+    <h2>分类：{{ .Title }}</h2>
+    <ul class="taxonomy-post-list">
+      {{ range .Pages.ByDate.Reverse }}
+        <li>
+          <a href="{{ .RelPermalink }}">{{ .Title }}</a>
+          <small>{{ .Date.Format "2006-01-02" }}</small>
+        </li>
+      {{ else }}
+        <li>该分类下暂无文章。</li>
+      {{ end }}
+    </ul>
+    <p class="taxonomy-back"><a href="{{ "/categories/" | relLangURL }}">返回全部分类</a></p>
+  </article>
+</div>
+{{ end }}
