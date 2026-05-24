@@ -73,7 +73,7 @@ table-of-contents = true
 3. Cloudflare Pages 自动构建并发布
 
 {{< note type="warn" title="踩坑提醒" >}}
-Cloudflare 有 Workers 和 Pages 两条路。Hugo 静态博客优先 Pages。
+Cloudflare 有 Workers 和 Pages 两条路。Hugo 静态博客优先 Pages。  
 如果日志里出现 `npx wrangler deploy`，大概率走错链路了。
 {{< /note >}}
 
@@ -95,8 +95,8 @@ Cloudflare 有 Workers 和 Pages 两条路。Hugo 静态博客优先 Pages。
 
 后面我会继续写内容，也会慢慢打磨视觉和写作 workflow。
 
-如果你也在从 0 搭 Hugo，希望这篇能给你一点信心：
-先跑起来，再变漂亮，最后再变强大。
+如果你也在从 0 搭 Hugo，希望这篇能给你一点信心：先跑起来，再变漂亮，最后再变强大。
+
 ---
 
 ## 补充：搭建 Hugo 博客需要哪些技术栈？
@@ -120,13 +120,13 @@ Cloudflare 有 Workers 和 Pages 两条路。Hugo 静态博客优先 Pages。
 
 ```mermaid
 graph TD
-A[Markdown 与 Front Matter] --> B[Hugo 基础命令与目录结构]
-B --> C[hugo.toml 配置: 菜单 分页 TOC]
-C --> D[主题使用与覆盖机制: layouts/static]
-D --> E[Shortcode 与样式优化: CSS/JS]
-E --> F[Git 工作流: 分支 提交 回滚]
-F --> G[Cloudflare Pages 自动部署]
-G --> H[持续迭代: 性能 SEO 写作体系]
+  A["Markdown 与 Front Matter"] --> B["Hugo 基础命令与目录结构"]
+  B --> C["hugo.toml 配置：菜单/分页/TOC"]
+  C --> D["主题使用与覆盖机制：layouts/static"]
+  D --> E["Shortcode 与样式优化：CSS/JS"]
+  E --> F["Git 工作流：分支/提交/回滚"]
+  F --> G["Cloudflare Pages 自动部署"]
+  G --> H["持续迭代：性能/SEO/写作体系"]
 ```
 
 一句话总结：先跑通发布链路，再打磨体验，最后再谈自动化。
