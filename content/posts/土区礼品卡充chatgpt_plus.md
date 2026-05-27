@@ -2,8 +2,12 @@
 title = "用土区礼品卡充值 ChatGPT Plus"
 date = 2026-05-24T18:00:00+08:00
 draft = false
+
+author = "Jiayi"
+
 tags = ["ChatGPT", "Apple ID", "踩坑"]
 categories = ["学习记录"]
+
 +++
 
 ## 前言
